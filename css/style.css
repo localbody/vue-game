@@ -1,89 +1,209 @@
 @font-face {
-  font-family: "Yanone";
-  src: url(../fonts/YanoneKaffeesatz-Medium.ttf);
+    font-family: "Yanone";
+    src: url(../fonts/YanoneKaffeesatz-Medium.ttf);
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Yanone",serif;
+    font-family: "Yanone", serif;
 }
 
 i.fa {
-  font-size: 30px;
-  margin-right: 10px;
+    font-size: 30px;
+    margin-right: 10px;
 
 }
 
-@keyframes slide{
-  0% {
-    background-position: 0% 0%;
-  }
+@keyframes slide {
+    0% {
+        background-position: 0% 0%;
+    }
 
-  50% {
-    background-position: 100% 0%;
-  }
+    50% {
+        background-position: 100% 0%;
+    }
 
-  100% {
-    background-position: 0% 0%;
-  }
+    100% {
+        background-position: 0% 0%;
+    }
 
 }
 
 .main {
-  background-image: url(../img/background__main.jpg);
-  background-repeat: repeat-x;
-  animation: slide 90s linear infinite;
+    background-image: url(../img/background__main.jpg);
+    background-repeat: repeat-x;
+    animation: slide 90s linear infinite;
 }
 
 .app {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
 }
 
 
 .app__header {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-bottom: 7px solid #FDB54D;
-  min-height: 247px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom: 7px solid #FDB54D;
+    min-height: 247px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
 }
 
 .app__logo {
-  padding: 20px 0;
-  display: block;
-  width: 200px;
-  margin: 0 auto;
+    padding: 20px 0;
+    display: block;
+    width: 200px;
+    margin: 0 auto;
 }
 
 .app__body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
-  overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    overflow: auto;
 }
 
 
-.app__bth {
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 50px;
-  width: 240px;
-  border-color: #1978D3;
-  box-shadow: 0px 7px 0px 0px #01579A;
-  margin: 0 auto;
-  border-radius: 30px;
+.app__btn {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 50px;
+    width: 240px;
+    background-color: #1978D3;
+    box-shadow: 0px 7px 0px 0px #01579A;
+    margin: 0 auto;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 20px;
+    color: white;
+    text-transform: uppercase;
+}
 
+.app__btn:focus {
+    outline: none;
+}
+
+.achievements .app__body {
+    justify-content: flex-start;
+}
+
+.app__body-inner {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.app__body-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.app__body-top {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: max-content max-content;
+    place-content: center center;
+    margin-bottom: 20px;
+}
+
+.app__card {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 10px;
+    border: 5px solid rgba(1, 88, 154, 0.5);
+    text-align: center;
+}
+
+.app__card:nth-child(1) {
+    border-right: none;
+    border-bottom: none;
+}
+
+.app__card:nth-child(2) {
+    border-left: none;
+    border-bottom: none;
+}
+
+.app__card:nth-child(3) {
+    border-right: none;
+    border-top: none;
+}
+
+.app__card:nth-child(4) {
+    border-left: none;
+    border-top: none;
+}
+
+.app__card-text {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.app__card-count {
+    font-size: 18px;
+}
+
+.app__body-middle {
+    margin-bottom: 15px;
+}
+
+.app__result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border: 5px solid rgba(1, 88, 154, 0.5);
+    background-color: rgba(25, 121, 211, 0.8);
+    margin-bottom: 7px;
+}
+
+.app__result:last-child {
+    margin-bottom: 0;
+}
+
+i.fa-star {
+    margin-right: 0;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.app__result-name {
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.app__result-amount {
+    font-size: 18px;
+}
+
+.btn__back {
+    width: 70px;
+    height: 70px;
+    box-shadow: none;
+    border-radius: 50%;
+}
+
+.btn__achievements {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 5px solid rgba(1, 88, 154, 0.5);
 }

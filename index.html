@@ -1,48 +1,112 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/font-awesome.min.css">
-  <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 
 
-  <title>Starcraft II</title>
+    <title>Starcraft II</title>
 </head>
+
 <body>
 
-  <div class="main">
-    <div class="app">
-      <div class="app__header">
-        <img src="./img/logo.png" alt="" class="app__logo">
-      </div>
-      <div class="app__body">
-        <button class="app__btn">
-          <i class="fa fa-play-circle-o" area-hidden="true"></i>
-          <div class="app__btn-text">Начать</div>
-        </button>
-        <button class="app__btn">
-          <i class="fa fa-trophy" area-hidden="true"></i>
-          <div class="app__btn-text">Достижения</div>
-        </button>
-        <button class="app__btn">
-          <i class="fa fa-user" area-hidden="true"></i>
-          <div class="app__btn-text">Автор</div>
-        </button>
-        <button class="app__btn btn__sound">
-          <i class="fa fa-volume-up" area-hidden="true"></i>
-          <div class="app__btn-text">Звук</div>
-        </button>
-      </div>
-    </div>
-  </div>
+    <div class="main">
 
-  <script src="./js/vue.js"></script>
-  <script src="./js/const.js"></script>
+        <div class="app">
+            <div class="app__header">
+                <img src="./img/logo.png" alt="" class="app__logo">
+            </div>
+            <div class="app__body">
+                <button class="app__btn">
+                    <i class="fa fa-play-circle-o" area-hidden="true"></i>
+                    <div class="app__btn-text">Начать</div>
+                </button>
+                <button class="app__btn">
+                    <i class="fa fa-trophy" area-hidden="true"></i>
+                    <div class="app__btn-text">Достижения</div>
+                </button>
+                <button class="app__btn">
+                    <i class="fa fa-user" area-hidden="true"></i>
+                    <div class="app__btn-text">Автор</div>
+                </button>
+                <button class="app__btn btn__sound">
+                    <i class="fa fa-volume-up" area-hidden="true"></i>
+                    <div class="app__btn-text">Звук</div>
+                </button>
+            </div>
+        </div>
+
+        <!--
+        <div class="app achievements">
+            <div class="app__body">
+                <div class="app__body-inner">
+                    <h2 class="app__body-title">
+                        <i class="fa fa-trophy" aria-hidden="true"></i>
+                        Достижения
+                    </h2>
+                    <div class="app__body-top">
+                        <div class="app__card">
+                            <div class="app__card-text">Счет</div>
+                            <div class="app__card-count">0</div>
+                        </div>
+                        <div class="app__card">
+                            <div class="app__card-text">Открыто рас</div>
+                            <div class="app__card-count">0</div>
+                        </div>
+                        <div class="app__card">
+                            <div class="app__card-text">Всего игр</div>
+                            <div class="app__card-count">0</div>
+                        </div>
+                        <div class="app__card">
+                            <div class="app__card-text">Любимая раса</div>
+                            <div class="app__card-count">0</div>
+                        </div>
+                    </div>
+
+                    <div class="app__body-middle">
+
+                        <div class="app__result">
+                            <div class="app__result-score">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <div class="app__result-count">150</div>
+                            </div>
+                            <div class="app__result-name">Зерг</div>
+                            <div class="app__result-amount">5</div>
+                        </div>
+                        <div class="app__result">
+                            <div class="app__result-score">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <div class="app__result-count">150</div>
+                            </div>
+                            <div class="app__result-name">Зерг</div>
+                            <div class="app__result-amount">5</div>
+                        </div>
+
+                    </div>
+
+                    <div class="app__body-bottom">
+                        <button class="app__btn btn__back btn__achievements">
+                            <i class="fa fa-reply" area-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         -->
+
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script src="./js/const.js"></script>
+    <script src="./js/app.js"></script>
 </body>
+
 </html>
