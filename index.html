@@ -13,27 +13,27 @@
     <link rel="stylesheet" href="./css/style.css">
 
 
-    <title>Starcraft II</title>
+    <title>StarCraft II</title>
 </head>
 
 <body>
 
     <div class="main">
 
-        <div class="app">
+        <div class="app" v-show="showMain">
             <div class="app__header">
                 <img src="./img/logo.png" alt="" class="app__logo">
             </div>
             <div class="app__body">
-                <button class="app__btn">
+                <button class="app__btn" @click="goToQuestions">
                     <i class="fa fa-play-circle-o" area-hidden="true"></i>
                     <div class="app__btn-text">Начать</div>
                 </button>
-                <button class="app__btn">
+                <button class="app__btn" @click="goToAchievements">
                     <i class="fa fa-trophy" area-hidden="true"></i>
                     <div class="app__btn-text">Достижения</div>
                 </button>
-                <button class="app__btn">
+                <button class="app__btn" @click="goToSocial">
                     <i class="fa fa-user" area-hidden="true"></i>
                     <div class="app__btn-text">Автор</div>
                 </button>
@@ -44,8 +44,7 @@
             </div>
         </div>
 
-        <!--
-        <div class="app achievements">
+        <div class="app achievements" v-show="showAchievements">
             <div class="app__body">
                 <div class="app__body-inner">
                     <h2 class="app__body-title">
@@ -93,14 +92,78 @@
                     </div>
 
                     <div class="app__body-bottom">
-                        <button class="app__btn btn__back btn__achievements">
+                        <button class="app__btn btn__back btn__achievements" @click="goToMain">
                             <i class="fa fa-reply" area-hidden="true"></i>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-         -->
+
+        <div class="app" v-show="showQuestions">
+             <div class="app__header">
+                 <div class="app__header-inner">
+                     <div class="app__count"># {{ number+1 }}</div>
+                     <div class="app__text">{{ questions[number][0] }}</div>
+                 </div>
+             </div>
+
+             <div class="app__body">
+                 <button class="app__btn"
+                    v-for="(answer, i) in questions[number][1]"
+                    @click="nextQuestions(questions[number][2][i])">
+                     <div class="app__btn-text">{{ answer }}</div>
+                 </button>
+           </div>
+         </div>
+
+        <div class="app" v-show="showSocial">
+            <div class="app__body">
+                <a href="#" class="app__btn" target="_blank">
+                    <i class="fa fa-instagram" area-hidden="true"></i>
+                    <div class="app__btn-text">Instagram</div>
+                </a>
+                <a href="#" class="app__btn" target="_blank">
+                    <i class="fa fa-twitter" area-hidden="true"></i>
+                    <div class="app__btn-text">Twitter</div>
+                </a>
+                <a href="#" class="app__btn" target="_blank">
+                    <i class="fa fa-facebook" area-hidden="true"></i>
+                    <div class="app__btn-text">Facebook</div>
+                </a>
+                <a href="#" class="app__btn" target="_blank">
+                    <i class="fa fa-vk " area-hidden="true"></i>
+                    <div class="app__btn-text">VK</div>
+                </a>
+                <button class="app__btn btn__back" @click="goToMain">
+                    <i class="fa fa-reply" area-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="app results" v-bind:data-race="resultRace" v-show="showResults">
+            <div class="app__body">
+                <div class="app__result-inner">
+                    <div class="results__title">{{ results[resultRace].name }}</div>
+                    <div class="results__img">
+                        <img :src="'./img/' + resultRace + '_logo.png'" alt="">
+                    </div>
+                    <div class="results__text-box">
+                        <p class="results__text">{{ results[resultRace].description }}</p>
+                        <p class="results__quote">{{ results[resultRace].quote1 }}</p>
+                        <p class="results__quote">{{ results[resultRace].quote2 }}</p>
+                        <p class="results__author">{{ results[resultRace].author }}</p>
+                    </div>
+
+                    <div>
+                        <button :class="'app__btn btn__back btn__' + resultRace" @click="goToAchievements">
+                            <i class="fa fa-reply" area-hidden="true"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
     </div>
 
